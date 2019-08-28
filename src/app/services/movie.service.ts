@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
 
-  url = 'https://api.themoviedb.org/3/';
-  apiKey = 'a2644ef202fe255c2e1539db9fe81e6d';
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
+  getMovies() {
+    console.log("URL: " + environment.url + "\nApiKey: " + environment.apiKey);
+    return this.http.get(environment.url + 'discover/movie?sort_by=popularity.desc&' + environment.apiKey);
+  }
 }
