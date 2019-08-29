@@ -10,7 +10,10 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   getMovies() {
-    console.log("URL: " + environment.url + "\nApiKey: " + environment.apiKey);
     return this.http.get(environment.url + 'discover/movie?sort_by=popularity.desc&' + environment.apiKey);
+  }
+
+  getMovieDetails(movieID) {
+    return this.http.get(environment.url + 'movie/' + movieID + '?' + environment.apiKey + '&language=en-US');
   }
 }

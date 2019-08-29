@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-movies',
@@ -9,12 +10,12 @@ import { MovieService } from 'src/app/services/movie.service';
 export class MoviesPage implements OnInit {
   moviesArray: any = [];
   imgPath = 'https://image.tmdb.org/t/p/original/';
-  constructor(private movieService: MovieService) {
+
+  constructor(private navCtrl: NavController, private movieService: MovieService) {
     this.getList();
   }
 
   ngOnInit() {
-
   }
 
   getList() {
@@ -23,8 +24,9 @@ export class MoviesPage implements OnInit {
     });
   }
 
-  getDetails() {
-
+  getDetails(movie) {
+    console.log(movie.id);
+    // this.navCtrl.navigateForward('/movie/', movie);
   }
 
 }
