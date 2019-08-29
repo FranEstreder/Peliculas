@@ -1,90 +1,72 @@
-ion-header {
-  height: 30px;
-  ion-toolbar {
-    position: absolute;
-    top: 0;
-  }
-}
-
 ion-content {
-  top: 104px;
-  &.content-ios {
-    top: 91px;
-  }
-}
+  top: 60px;
+  max-height: calc(100vh - 40px);
+  .gGrid {
+    background-image: linear-gradient(#8a8a8a, #242424);
+    background-attachment: fixed;
+    ion-row {
+      margin-top: 0 !important;
 
-// Settings Images Border Radius
-ion-thumbnail img {
-  border-radius: 10px;
-}
-.input-wrapper {
-  display: block;
-}
-ion-badge {
-  right: 0;
-  bottom: 0;
-}
-.item-button {
-  background-color: #15c096;
-  color: #ffffff;
-}
-
-ion-card {
-  cursor: pointer;
-  position: relative;
-  height: 215px;
-  border-radius: 10px;
-  box-shadow: none;
-  margin-bottom: 16px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  &:hover {
-    opacity: 0.9;
-  }
-
-  .cardTitle {
-    margin: 0;
-    position: absolute;
-    padding: 10px;
-    width: 100%;
-    top: 0;
-    color: white;
-    font-weight: bold;
-    background: linear-gradient(to bottom, rgb(20, 20, 19) 20%, transparent 100%);
-    display: inline-grid;
-  }
-
-  // Card Subtitle
-  .cardSubtitle {
-    padding: 2px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    background: linear-gradient(to top, rgb(20, 20, 19) 20%, transparent 100%);
-    display: inline-grid;
-    div {
-      float: right;
-      margin: 2% 2% 2% 70%;
-      img {
-        display: block;
-        width: 90px;
-        height: 120px;
+      ion-card {
+        cursor: pointer;
+        position: relative;
+        height: 215px;
         border-radius: 10px;
-        display: inline-block;
-        box-shadow: 0px 5px 20px;
-        transition: 0.3s ease;
-      }
-    }
-    ion-grid {
-      width: 100%;
-      ion-row ion-col ion-badge {
-        width: 100%;
-        font-size: 15px;
-        font-weight: bold;
-        border-radius: 15px;
+        box-shadow: none;
+        margin-bottom: 16px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:hover {
+          opacity: 0.9;
+        }
+
+        .cardTitle {
+          margin: 0;
+          position: absolute;
+          padding: 10px;
+          width: 100%;
+          top: 0;
+          color: white;
+          font-weight: bold;
+          background: linear-gradient(to bottom, rgb(20, 20, 19) 20%, transparent 100%);
+          display: inline-grid;
+          font-family: "Raleway", sans-serif;
+        }
+
+        .cardSubtitle {
+          padding: 2px;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          color: white;
+          background: linear-gradient(to top, rgb(20, 20, 19) 20%, transparent 100%);
+          display: inline-grid;
+          div {
+            float: right;
+            margin: 2% 2% 2% 70%;
+            img {
+              display: block;
+              width: 90px;
+              height: 120px;
+              border-radius: 10px;
+              display: inline-block;
+              box-shadow: 0px 5px 20px;
+              transition: 0.3s ease;
+            }
+          }
+          ion-grid {
+            width: 100%;
+            ion-row ion-col ion-badge {
+              width: 100%;
+              font-size: 15px;
+              font-weight: bold;
+              border-radius: 15px;
+              font-family: "Raleway", sans-serif;
+            }
+          }
+        }
       }
     }
   }
