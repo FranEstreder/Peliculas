@@ -10,7 +10,7 @@ export class MoviesPage implements OnInit {
   moviesArray: any = [];
   imgPath = 'https://image.tmdb.org/t/p/original/';
   constructor(private movieService: MovieService) {
-    // this.getList();
+    this.getList();
   }
 
   ngOnInit() {
@@ -21,7 +21,10 @@ export class MoviesPage implements OnInit {
     this.movieService.getMovies().subscribe(movies => {
       this.moviesArray = movies['results'];
     });
-    // console.log("Hola\n" + this.moviesArray);
+  }
+
+  getDetails() {
+
   }
 
 }

@@ -1,49 +1,34 @@
-<ion-header header-ios>
-  <ion-navbar transparent>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+<ion-header>
+  <ion-toolbar transparent>
     <ion-title color="secondary" text-left>MoV</ion-title>
-  </ion-navbar>
-  <ion-toolbar no-padding>
-    <div background-size container-hearder-image
-      [ngStyle]="{'background-image': 'url(assets/images/background/2.jpg)'}">
-      <div search-bar-bcg>
-        <!-- Header Title -->
-        <h1 ion-text no-margin padding-left search-bar-title>Search..</h1>
-        <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onEvent($event)"></ion-searchbar>
-      </div>
-    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="getList()">Get Movies</ion-button>
   <ion-grid no-padding *ngIf="moviesArray != null">
     <ion-row card-background-page no-padding>
-      <ion-col no-padding col-12 col-md-12 col-lg-6 *ngFor="let movie of this.moviesArray;let i = index">
+      <ion-col no-padding size="6" *ngFor="let movie of this.moviesArray;let i = index">
         <ion-card background-size text-left (click)="getDetails(movie)"
           [ngStyle]="{'background-image': 'url(' + imgPath + movie.backdrop_path + ')'}">
           <!-- Card Title-->
-          <div text-wrap card-title>
+          <h1 text-wrap card-title class="cardTitle">
             {{movie.title}}
-          </div>
+          </h1>
           <!-- Card Subtitle-->
-          <div text-wrap card-subtitle>
-            <div style="float: right; margin: 2% 2% 2% 70%;">
-              <img [src]="imgPath + movie.poster_path"
-                style="display: block;width: 90px; height: 120px; border-radius: 10px;display: inline-block;box-shadow: 0px 5px 20px;transition: 0.3s ease;">
+          <div text-wrap card-subtitle class="cardSubtitle">
+            <div>
+              <img [src]="imgPath + movie.poster_path">
             </div>
             <ion-grid>
               <ion-row>
-                <ion-col col-4>
-                  <ion-badge color="green" item-end>{{movie.release_date}}</ion-badge>
+                <ion-col size="4">
+                  <ion-badge color="success" item-end>{{movie.release_date}}</ion-badge>
                 </ion-col>
-                <ion-col col-4>
-                  <ion-badge color="red" item-end>{{movie.vote_average}}</ion-badge>
+                <ion-col size="4">
+                  <ion-badge color="danger" item-end>{{movie.vote_average}}</ion-badge>
                 </ion-col>
-                <ion-col col-4>
-                  <ion-badge color="secondary" item-end>{{movie.popularity}}</ion-badge>
+                <ion-col size="4">
+                  <ion-badge color="primary" item-end>{{movie.popularity}}</ion-badge>
                 </ion-col>
               </ion-row>
             </ion-grid>
