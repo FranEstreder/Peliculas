@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { MovieService } from '../../services/movie.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-movie-details',
@@ -9,15 +10,15 @@ import { MovieService } from '../../services/movie.service';
 })
 export class MovieDetailsPage implements OnInit {
 
-  movieId: String;
   movie: any;
+  movieDetails: any;
+  id: String;
 
-  constructor(private route: ActivatedRoute, private movieService: MovieService) {
-    this.route.queryParams.subscribe(params => {
-      console.log(params);
-      this.movieId = params["id"];
-    });
-    console.log(this.movieId);
+  constructor(
+    private route: ActivatedRoute,
+    private movieService: MovieService,
+    private navCtrl: NavController) {
+    this.id = this.route.snapshot.params.id;
     this.getDetails();
   }
 
@@ -25,11 +26,13 @@ export class MovieDetailsPage implements OnInit {
   }
 
   getDetails() {
-    this.movieService.getMovieDetails(this.movieId).subscribe(movies => {
+    this.movieService.getMovieDetails(this.id).subscribe(movies => {
       this.movie = movies;
     });
-    console.log(this.movie);
   }
 
+  goBack() {
+    this.navCtrl.navigateForward('/movies');
+  }
 
 }

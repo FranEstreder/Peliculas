@@ -1,9 +1,12 @@
-<!-- <ion-content [ngStyle]="{'background': 'url(' + imgPath + backdrop_path + ') center fixed'}">
-  <img [src]="imgPath + movie.poster_path" class="img_style">
-  <div class="title">
-    {{movie.title}}
-  </div>
-  <div class="overview">
-    {{movie.overview}}
-  </div>
-</ion-content> -->
+<ion-content no-padding>
+  <ion-button color="primary" (click)="goBack()">Go Back</ion-button>
+  <ion-grid *ngIf="movie != null" [ngStyle]="{'background': 'url(' + imgPath + movie.backdrop_path + ') center fixed'}">
+    <img [src]="imgPath + movie.poster_path" class="img_style">
+    <div class="title">
+      {{movie.title}}
+    </div>
+    <div class="overview">
+      {{movie.overview}}
+    </div>
+  </ion-grid>
+</ion-content>

@@ -12,11 +12,14 @@ export class MoviesPage implements OnInit {
   moviesArray: any = [];
   imgPath = environment.imgPath;
 
-  constructor(private navCtrl: NavController, private movieService: MovieService) {
+  constructor(
+    private navCtrl: NavController,
+    private movieService: MovieService) {
     this.getList();
   }
 
   ngOnInit() {
+
   }
 
   getList() {
@@ -26,8 +29,7 @@ export class MoviesPage implements OnInit {
   }
 
   goDetailsPage(movie) {
-    const id = movie.id;
-    this.navCtrl.navigateForward('/movie/' + id, id);
+    this.navCtrl.navigateForward('/movie/' + movie.id, movie.id);
   }
 
 }
