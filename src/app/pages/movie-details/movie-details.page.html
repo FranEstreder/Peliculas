@@ -1,12 +1,16 @@
-<ion-content no-padding>
-  <ion-button color="primary" (click)="goBack()">Go Back</ion-button>
-  <ion-grid *ngIf="movie != null" [ngStyle]="{'background': 'url(' + imgPath + movie.backdrop_path + ') center fixed'}">
-    <img [src]="imgPath + movie.poster_path" class="img_style">
-    <div class="title">
+<ion-content no-padding *ngIf="movie != null">
+  <div class="content" [ngStyle]="{'background-image': 'url(' + imgPath + movie.backdrop_path + ')'}">
+    <ion-button color="primary" (click)="goBack()" class="backButton">Go Back</ion-button>
+    <div class="divImg"><img [src]="getPoster()" class="img_Poster"></div>
+    <h1 class="title">
       {{movie.title}}
-    </div>
-    <div class="overview">
+    </h1>
+    Genres:
+    <span class="genres" *ngFor="let genre of this.movie.genres; let i = index">
+      {{genre.name}}
+    </span><br>
+    <span class="overview">
       {{movie.overview}}
-    </div>
-  </ion-grid>
+    </span><br>
+  </div>
 </ion-content>

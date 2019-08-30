@@ -1,89 +1,46 @@
 ion-content {
   top: 60px;
   max-height: calc(100vh - 40px);
-}
 
-page-detail {
-  .title {
-    margin-top: 10px;
-    position: relative;
-    padding: 10px;
-    font-size: font-size-text("h1") !important;
-    width: 100%;
-    top: 0;
-    color: theme-colors("textColors", "secondaryBase") !important;
-    background: rgba(0, 0, 0, 0.5);
-  }
+  .content {
+    background-position: center;
+    background-attachment: fixed;
+    background-size: auto;
+    font-family: "Raleway", sans-serif;
+    // color: white;
+    // background-color: transparent;
+    z-index: 2;
+    width: 100vw;
+    height: calc(100vh - 40px);
+    background: linear-gradient(
+      to top,
+      rgba(20, 20, 19) 0%,
+      rgba(255, 255, 255, 0) 11%,
+      rgba(255, 255, 255, 0) 89%,
+      rgba(20, 20, 19) 100%
+    );
 
-  .overview {
-    color: theme-colors("textColors", "secondaryBase") !important;
-    position: relative;
-    padding: 10px;
-    font-size: font-size-text("h4") !important;
-    text-align: justify;
-    background: rgba(0, 0, 0, 0.5);
-  }
+    .title {
+      font-family: "Raleway", sans-serif;
+      margin-bottom: 10px;
+      font-size: 40px;
+      font-weight: bold;
+    }
 
-  .img_style {
-    @media only screen and (min-width: 600px) {
-      display: block;
-      width: 240px;
-      height: 300px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0px 5px 20px;
-      transition: 0.3s ease;
-      margin-left: 55%;
-    }
-    @media only screen and (min-width: 768px) {
-      display: block;
-      width: 240px;
-      height: 300px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0px 5px 20px;
-      transition: 0.3s ease;
-      margin-left: 65%;
-    }
-    @media only screen and (min-width: 992px) {
-      display: block;
-      width: 240px;
-      height: 300px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0px 5px 20px;
-      transition: 0.3s ease;
-      margin-left: 30%;
-    }
-    @media only screen and (min-width: 1200px) {
-      display: block;
-      width: 240px;
-      height: 300px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0px 5px 20px;
-      transition: 0.3s ease;
-      margin-left: 70%;
-    }
-    @media only screen and (min-width: 360px) {
-      display: block;
-      width: 240px;
-      height: 300px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0px 5px 20px;
-      transition: 0.3s ease;
-      margin-left: 33%;
-    }
-    @media only screen and (min-width: 1024px) {
-      display: block;
-      width: 240px;
-      height: 300px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0px 5px 20px;
-      transition: 0.3s ease;
-      margin-left: 70%;
+    .divImg {
+      z-index: 3;
+      background-color: transparent;
+      float: right;
+      margin: 2% 2% 2% 20%;
+      .img_Poster {
+        display: block;
+        width: 90px;
+        height: 120px;
+        border-radius: 10px;
+        display: inline-block;
+        box-shadow: 0px 5px 20px;
+        transition: 0.3s ease;
+      }
     }
   }
 }
